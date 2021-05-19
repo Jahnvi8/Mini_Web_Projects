@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
+    <title>Pricing Panel</title>
+
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+        
+        body {
+            box-sizing: border-box;
+            background: rgb(99, 110, 179);
+            line-height: 1;
+            font-family: 'Baloo Bhai 2', cursive;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            align-items: center;
+        }
+        
+        .panel {
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px 25px;
+            width: 100%;
+            width: 700px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        .pricing-plan {
+            border-bottom: 1px solid #e1f1ff;
+        }
+        
+        .pricing-plan:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-img {
+            margin-bottom: 25px;
+            max-width: 100%;
+        }
+        
+        .pricing-header {
+            color: #888;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 20px;
+        }
+        
+        .pricing-features {
+            margin: 10px 0 25px;
+            color: rgb(99, 110, 179);
+        }
+        
+        .pricing-features-item {
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 12px;
+            line-height: 1;
+            padding: 15px 0;
+            border-top: 1px solid #e1f1ff;
+        }
+        
+        .pricing-features:last-child {
+            border-bottom: 1px solid #e1f1ff;
+        }
+        
+        .pricing-price {
+            color: rgb(99, 110, 179);
+            display: block;
+            font-weight: 700;
+            font-size: 32px;
+        }
+        
+        .pricing-button {
+            border: 1px solid rgb(99, 110, 179);
+            border-radius: 10px;
+            padding: 10px 20px;
+            display: inline-block;
+            color: #fff;
+            font-size: 17px;
+            background-color: rgb(99, 110, 179);
+            font-weight: 700;
+            margin: 5px 0;
+        }
+        
+        .pricing-button:hover,
+        .pricing-button:focus {
+            background-color: rgb(196, 199, 221);
+            color: rgb(99, 110, 179);
+        }
+        
+        @media screen and (min-width:900px) {
+            .panel {
+                flex-direction: row;
+            }
+            .pricing-plan {
+                border-bottom: none;
+                border-right: 1px solid;
+                padding: 25px 50px;
+            }
+            .pricing-plan:last-child {
+                border-right: none;
+            }
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panel pricing-table">
+        <div class="pricing-plan">
+            <img src="http://school.mangoanimate.com/wp-content/uploads/2020/11/Professional-Animated-Presentation-Creator-The-luxury-of-Attractive-Visuals.png" width="400" height="100" class="pricing-img" alt="">
+            <h2 class="pricing-header">Personal</h2>
+            <ul class="pricing-features">
+                <li class="pricing-features-item">Custom Domains</li>
+                <li class="pricing-features-item">Sleeps after 30 mins of the inactivity</li>
+            </ul>
+            <span class="pricing-price"> Free</span>
+            <a href="#" class="pricing-button">Sign up</a>
+        </div>
+
+        <div class="pricing-plan">
+            <img src="https://media.istockphoto.com/vectors/set-of-realistic-smart-different-professional-and-business-man-vector-id471748986?k=6&m=471748986&s=612x612&w=0&h=Sh2XI2g4bIGDQKAUckGDG0mYVhf21ndVmpDCaZ4l6SU=" width="400" height="100" class="pricing-img"
+                alt="">
+            <h2 class="pricing-header">Small Team</h2>
+            <ul class="pricing-features">
+                <li class="pricing-features-item">Never Sleeps</li>
+                <li class="pricing-features-item">Multiple workers for more powerful Apps</li>
+            </ul>
+            <span class="pricing-price">$150</span>
+            <a href="#" class="pricing-button">Free Trial</a>
+        </div>
+
+        <div class="pricing-plan">
+            <img src="https://pngimage.net/wp-content/uploads/2018/05/animated-people-png-5.png" width="400" height="100" class="pricing-img" alt="">
+            <h2 class="pricing-header">Enterprise</h2>
+            <ul class="pricing-features">
+                <li class="pricing-features-item">Dedicated</li>
+                <li class="pricing-features-item">Broadband horizontal scalability</li>
+            </ul>
+            <span class="pricing-price">$400</span>
+            <a href="#" class="pricing-button">Free trial</a>
+        </div>
+    </div>
+</body>
+
+</html>
