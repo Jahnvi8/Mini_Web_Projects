@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa Bro..</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+</head>
+<style>
+    .title {
+        font-weight: bold;
+        text-align: center;
+        font-family: "Mountains of Christmas";
+    }
+    
+    body {
+        background: radial-gradient(circle, rgba(251, 247, 248, 1) 0%, rgba(249, 240, 242, 1) 40%, rgba(247, 231, 234, 1) 57%, rgba(215, 109, 124, 0.802025033646271) 100%);
+    }
+    
+    .body {
+        position: absolute;
+        top: 46%;
+        left: 18%;
+        width: 62%;
+        height: 56%;
+        border-left: 5px solid white;
+        border-right: 5px solid white;
+        border-radius: 50%;
+        background: tomato;
+        -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+        animation: heartbeat 1.5s ease-in-out infinite both;
+    }
+    
+    .box {
+        position: relative;
+        margin: auto;
+        display: block;
+        margin-top: 2%;
+        width: 630px;
+        height: 460px;
+        background: none;
+    }
+    
+    .bubble {
+        position: absolute;
+        top: 5%;
+        left: 14%;
+        width: 70%;
+        height: 90%;
+        border: 5px solid tomato;
+        border-radius: 50%;
+        background: linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #6654F1 100%);
+    }
+    
+    .cap-top {
+        position: absolute;
+        top: 2%;
+        left: 45.4%;
+        width: 6%;
+        height: 6%;
+        border: 5px solid white;
+        border-radius: 50%;
+        background: tomato;
+    }
+    
+    .cap {
+        position: absolute;
+        top: 5%;
+        left: 38%;
+        width: 22%;
+        height: 36%;
+        border: 5px solid white;
+        border-radius: 50%;
+        background: tomato;
+    }
+    
+    .cap-bottom {
+        position: absolute;
+        top: 19%;
+        left: 31%;
+        width: 38%;
+        height: 12%;
+        background: white;
+        -webkit-clip-path: circle(50% at 50% 100%);
+        clip-path: circle(50% at 50% 100%);
+        z-index: 2;
+    }
+    
+    .face {
+        position: absolute;
+        top: 22%;
+        left: 36%;
+        width: 26%;
+        height: 36%;
+        border: 5px solid white;
+        border-radius: 50%;
+        background: #FFF8D2;
+        z-index: 1;
+    }
+    
+    .eye-left {
+        position: absolute;
+        top: 34%;
+        left: 30%;
+        width: 10%;
+        height: 10%;
+        background: goldenrod;
+        -webkit-clip-path: circle(50% at 50% 100%);
+        clip-path: circle(50% at 50% 100%);
+        z-index: 1;
+        -webkit-animation: blink-1 2s 3s infinite both;
+        animation: blink-1 2s 3s infinite both;
+    }
+    
+    .eye-right {
+        position: absolute;
+        top: 34%;
+        right: 30%;
+        width: 10%;
+        height: 10%;
+        background: goldenrod;
+        -webkit-clip-path: circle(50% at 50% 100%);
+        clip-path: circle(50% at 50% 100%);
+        z-index: 1;
+    }
+    
+    .ear-left {
+        position: absolute;
+        top: 42%;
+        left: -14%;
+        width: 12%;
+        height: 12%;
+        background: #FFF8D2;
+        -webkit-clip-path: circle(50% at 100% 50%);
+        clip-path: circle(50% at 100% 50%);
+    }
+    
+    .ear-right {
+        position: absolute;
+        top: 42%;
+        right: -14%;
+        width: 12%;
+        height: 12%;
+        background: #FFF8D2;
+        -webkit-clip-path: circle(50% at 0 50%);
+        clip-path: circle(50% at 0 50%);
+    }
+    
+    .nose {
+        position: absolute;
+        top: 54%;
+        left: 46%;
+        width: 16%;
+        height: 16%;
+        background: lightpink;
+        z-index: 3;
+        -webkit-clip-path: circle(50% at 4% 4%);
+        clip-path: circle(50% at 4% 4%);
+    }
+    
+    .beard-left {
+        position: absolute;
+        top: 54%;
+        left: -6%;
+        width: 76%;
+        height: 56%;
+        background: white;
+        border-radius: 50%;
+        z-index: 2;
+    }
+    
+    .beard-right {
+        position: absolute;
+        top: 54%;
+        right: -6%;
+        width: 76%;
+        height: 56%;
+        background: white;
+        border-radius: 50%;
+        z-index: 2;
+    }
+    
+    .beard-center {
+        position: absolute;
+        top: 78%;
+        left: 34%;
+        width: 36%;
+        height: 36%;
+        background: white;
+        border-radius: 50%;
+        z-index: 2;
+    }
+    
+    .mouth {
+        position: absolute;
+        top: 68%;
+        left: 42%;
+        width: 20%;
+        height: 20%;
+        background: goldenrod;
+        border-radius: 30%;
+        -webkit-clip-path: circle(53.6% at 51% 0);
+        clip-path: circle(53.6% at 51% 0);
+        z-index: 2;
+    }
+    
+    .cheek-left {
+        position: absolute;
+        top: 48%;
+        left: 18%;
+        width: 25%;
+        height: 20%;
+        background: rgba(252, 228, 236, 0.9);
+        border-radius: 50%;
+        z-index: 1;
+    }
+    
+    .cheek-right {
+        position: absolute;
+        top: 48%;
+        right: 18%;
+        width: 25%;
+        height: 20%;
+        background: rgba(252, 228, 236, 0.9);
+        border-radius: 50%;
+        z-index: 1;
+    }
+    
+    .button {
+        position: absolute;
+        left: 47%;
+        width: 6%;
+        height: 6%;
+        border: 2px solid goldenrod;
+        background: gold;
+        /* //star */
+        -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+    
+    .button-1 {
+        top: 34%;
+    }
+    
+    .button-2 {
+        top: 48%;
+    }
+    
+    .button-3 {
+        top: 62%;
+    }
+    
+    .button-4 {
+        top: 76%;
+    }
+    
+    @-webkit-keyframes heartbeat {
+        from {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+        }
+        10% {
+            -webkit-transform: scale(0.91);
+            transform: scale(0.91);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+        }
+        17% {
+            -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+        }
+        33% {
+            -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+        }
+        45% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+        }
+    }
+    
+    @keyframes heartbeat {
+        from {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+        }
+        10% {
+            -webkit-transform: scale(0.91);
+            transform: scale(0.91);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+        }
+        17% {
+            -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+        }
+        33% {
+            -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+        }
+        45% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+        }
+    }
+    /* //animation for the eye */
+    
+    @-webkit-keyframes blink-1 {
+        0%,
+        50%,
+        100% {
+            opacity: 1;
+        }
+        25%,
+        75% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes blink-1 {
+        0%,
+        50%,
+        100% {
+            opacity: 1;
+        }
+        25%,
+        75% {
+            opacity: 0;
+        }
+    }
+</style>
+
+<body>
+    <h1 class="title">Santa Claus is coming to town...</h1>
+    <div class="box">
+        <div class="bubble">
+            <div class="body">
+                <div class="button button-1"></div>
+                <div class="button button-2"></div>
+                <div class="button button-3"></div>
+                <div class="button button-4"></div>
+            </div>
+        </div>
+
+        <div class="cap-top"></div>
+        <div class="cap"></div>
+        <div class="cap-bottom"></div>
+
+        <div class="face">
+            <div class="eye-left"></div>
+            <div class="eye-right"></div>
+            <div class="ear-left"></div>
+            <div class="ear-right"></div>
+            <div class="nose"></div>
+            <div class="beard-left"></div>
+            <div class="beard-right"></div>
+            <div class="beard-center"></div>
+            <div class="mouth"></div>
+            <div class="cheek-left"></div>
+            <div class="cheek-right"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>
