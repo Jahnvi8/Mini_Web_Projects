@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dear Snowman</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+
+    <style>
+        h2 {
+            font-weight: bold;
+            text-align: center;
+            font-family: "Mountains of Christmas";
+            font-size: 35px;
+        }
+        
+        .box {
+            width: 500px;
+            height: 500px;
+            margin: 20px;
+            left: 170px;
+            position: relative;
+            display: block;
+        }
+        
+        .body {
+            position: absolute;
+            top: 44%;
+            left: 28%;
+            width: 46%;
+            height: 46%;
+            border-radius: 50%;
+            background: white;
+        }
+        
+        .head {
+            position: absolute;
+            top: 20%;
+            left: 35%;
+            width: 30%;
+            height: 30%;
+            border-radius: 50%;
+            background: white;
+            z-index: 1;
+        }
+        
+        .left-eye {
+            position: absolute;
+            top: 30%;
+            left: 45%;
+            width: 3%;
+            height: 5%;
+            background: black;
+            border-radius: 40%;
+            z-index: 5;
+        }
+        
+        .ryt-eye {
+            position: absolute;
+            top: 30%;
+            right: 45%;
+            width: 3%;
+            height: 5%;
+            background: black;
+            border-radius: 40%;
+            z-index: 5;
+        }
+        
+        .left-eye-sparkle {
+            position: absolute;
+            top: 33%;
+            left: 46.5%;
+            width: 1.5%;
+            height: 1.5%;
+            background: white;
+            border-radius: 50%;
+            z-index: 6;
+        }
+        
+        .ryt-eye-sparkle {
+            position: absolute;
+            top: 33%;
+            right: 45%;
+            width: 1.5%;
+            height: 1.5%;
+            background: white;
+            border-radius: 40%;
+            z-index: 6;
+        }
+        
+        .hat-top {
+            position: absolute;
+            width: 120px;
+            height: 50px;
+            background: black;
+            top: 15%;
+            left: 38%;
+            border-radius: 50px;
+            z-index: 1;
+        }
+        
+        .hat-top1 {
+            position: absolute;
+            width: 80px;
+            height: 50px;
+            background: black;
+            top: 10%;
+            left: 42%;
+            border-radius: 60px;
+            z-index: 1;
+        }
+        
+        .hat-top2 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: red;
+            top: 5%;
+            left: 45%;
+            border-radius: 50px;
+            z-index: 1;
+        }
+        
+        .hat-top3 {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            top: 6%;
+            left: 50%;
+            border-radius: 50px;
+            z-index: 2;
+        }
+        
+        .hat-mid {
+            position: absolute;
+            width: 130px;
+            height: 14px;
+            background: red;
+            left: 37%;
+            top: 22%;
+            z-index: 3;
+            border-radius: 10px;
+        }
+        
+        .hat-bottom {
+            position: absolute;
+            width: 140px;
+            height: 30px;
+            background: black;
+            top: 24%;
+            left: 36%;
+            height: 13px;
+            z-index: 3;
+            border-radius: 10px;
+        }
+        
+        .nose {
+            position: absolute;
+            width: 10px;
+            height: 80px;
+            background: orange;
+            top: 35%;
+            left: 49%;
+            height: 13px;
+            clip-path: polygon(51% 20%, 0% 100%, 100% 100%);
+            z-index: 3;
+            /*    border-radius:10px; */
+        }
+        
+        .mouth {
+            position: absolute;
+            width: 12%;
+            height: 50%;
+            background: #e34b82;
+            border-radius: 40%;
+            top: 40%;
+            left: 44%;
+            height: 13px;
+            /* clip-path: circle(50% at 50% 50%); */
+            z-index: 3
+        }
+        
+        .mouth2 {
+            position: absolute;
+            width: 8%;
+            height: 170%;
+            background: #e34b82;
+            border-radius: 60%;
+            top: 41%;
+            left: 46%;
+            height: 13px;
+            /*  clip-path: circle(50% at 50% 50%);  */
+            z-index: 3
+        }
+        
+        .scarf {
+            position: absolute;
+            width: 27%;
+            height: 5%;
+            background: blue;
+            border-radius: 40%;
+            top: 45%;
+            left: 37%;
+            z-index: 3;
+        }
+        
+        .scarf2 {
+            position: absolute;
+            width: 24%;
+            height: 5%;
+            background: blue;
+            border-radius: 40%;
+            top: 48%;
+            left: 39%;
+            z-index: 3;
+        }
+        
+        .scarf3 {
+            position: absolute;
+            width: 8%;
+            height: 20%;
+            background: blue;
+            border-radius: 40%;
+            top: 46%;
+            left: 36%;
+            z-index: 3;
+        }
+        
+        .btn1 {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: black;
+            top: 58%;
+            left: 49%;
+            border-radius: 20px;
+        }
+        
+        .btn2 {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: black;
+            top: 65%;
+            left: 49%;
+            border-radius: 20px;
+        }
+        
+        .btn3 {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: black;
+            top: 72%;
+            left: 49%;
+            border-radius: 20px;
+        }
+        
+        .hand1 {
+            position: absolute;
+            width: 73px;
+            height: 10px;
+            background: brown;
+            top: 55%;
+            left: 64%;
+            border-radius: 10px;
+        }
+        
+        .hand2 {
+            position: absolute;
+            width: 73px;
+            height: 10px;
+            background: brown;
+            top: 55%;
+            left: 22%;
+            border-radius: 10px;
+        }
+        
+        .hand3 {}
+    </style>
+</head>
+
+<body background="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/52e52df7-d399-41df-bc7e-7bbb5603fc7f/d5f8kxr-952358a2-1d0f-4265-a1d7-40324aa02b8b.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUyZTUyZGY3LWQzOTktNDFkZi1iYzdlLTdiYmI1NjAzZmM3ZlwvZDVmOGt4ci05NTIzNThhMi0xZDBmLTQyNjUtYTFkNy00MDMyNGFhMDJiOGIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.WfHDUMtuNllyH1CwmnYO8XZJyc_FeaEJzf_dPfx63dg">
+    <h2>Snowyy eveningg...!!</h2>
+    <div class="box">
+        <div class="body"></div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+        <div class="mouth2"></div>
+        <div class="head"></div>
+        <div class="ryt-eye"></div>
+        <div class="left-eye-sparkle"></div>
+        <div class="ryt-eye-sparkle"></div>
+        <div class="left-eye"></div>
+        <div class="hat-top1"></div>
+        <div class="hat-top2"></div>
+        <div class="hat-top3"></div>
+        <div class="hat-top"></div>
+        <div class="hat-mid"></div>
+        <div class="hat-bottom"></div>
+        <div class="scarf"></div>
+        <div class="scarf2"></div>
+        <div class="scarf3"></div>
+        <div class="btn1"></div>
+        <div class="btn2"></div>
+        <div class="btn3"></div>
+        <div class="hand1"></div>
+        <div class="hand2"></div>
+        <div class="hand3"></div>
+    </div>
+</body>
+
+</html>
