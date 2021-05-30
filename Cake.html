@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: linear-gradient(-225deg, #5d9fff 0%, #b8dcff 48%, #6bbbff 100%);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #a9708c;
+            font-family: oblique;
+            font-style: italic;
+        }
+        
+        .box {
+            position: relative;
+            width: 600px;
+            height: 450px;
+            margin: auto;
+            background: none;
+            display: block;
+            /*   border: 2px solid red; */
+        }
+        
+        .cake-bottom {
+            position: absolute;
+            top: 55%;
+            left: 29%;
+            width: 42%;
+            height: 42%;
+            background: brown;
+            clip-path: polygon(0 0, 100% 0, 90% 100%, 11% 100%);
+        }
+        
+        .base {
+            position: absolute;
+            /*   border:2px solid black; */
+            top: 55%;
+            left: 29%;
+            width: 42%;
+            height: 42%;
+            border-radius: 10px;
+            background: #a9707e;
+            clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 11% 100%);
+            z-index: 1;
+        }
+        
+        .base-line-1 {
+            position: absolute;
+            top: 0%;
+            left: 3%;
+            width: 5%;
+            height: 100%;
+            border-radius: 5%;
+            /* border:2px solid brown;  */
+            background: rgba(248, 106, 235, 0.6);
+            clip-path: polygon(0 0, 100% 0, 82% 100%, 18% 100%);
+            z-index: 2;
+        }
+        
+        .base-line-2 {
+            position: absolute;
+            top: 0%;
+            left: 13%;
+            width: 5%;
+            height: 100%;
+            background: rgba(248, 106, 235, 0.6);
+            border-radius: 5%;
+            clip-path: polygon(0 0, 100% 0, 82% 100%, 18% 100%);
+        }
+        
+        .base-line-3 {
+            position: absolute;
+            top: 0%;
+            left: 23%;
+            width: 5%;
+            height: 100%;
+            background: rgba(248, 106, 235, 0.6);
+            border-radius: 5%;
+            clip-path: polygon(0 0, 100% 0, 82% 100%, 18% 100%);
+        }
+        
+        .base-line-4 {
+            position: absolute;
+            top: 0%;
+            left: 33%;
+            width: 5%;
+            height: 100%;
+            background: rgba(248, 106, 235, 0.6);
+            border-radius: 5%;
+            clip-path: polygon(0 0, 100% 0, 82% 100%, 18% 100%);
+        }
+        
+        .base-line-5 {
+            position: absolute;
+            top: 0%;
+            left: 43%;
+            width: 5%;
+            height: 100%;
+            background: rgba(248, 106, 235, 0.6);
+            border-radius: 5%;
+            clip-path: polygon(0 0, 100% 0, 82% 100%, 18% 100%);
+        }
+        
+        .base-line-6 {
+            position: absolute;
+            top: 0%;
+            left: 53%;
+            width: 5%;
+            height: 100%;
+            background: rgba(248, 106, 235, 0.6);
+            border-radius: 5%;
+            clip-path: polygon(0 0, 100% 0, 82% 100%, 18% 100%);
+        }
+        
+        .base-line-7 {
+            position: absolute;
+            top: 0%;
+            left: 63%;
+            width: 5%;
+            height: 100%;
+            background: rgba(248, 106, 235, 0.6);
+            border-radius: 5%;
+            clip-path: polygon(0 0, 100% 0, 82% 100%, 18% 100%);
+        }
+        
+        .base-line-8 {
+            position: absolute;
+            top: 0%;
+            left: 73%;
+            width: 5%;
+            height: 100%;
+            background: rgba(248, 106, 235, 0.6);
+            border-radius: 5%;
+            clip-path: polygon(0 0, 100% 0, 82% 100%, 18% 100%);
+        }
+        
+        .base-line-9 {
+            position: absolute;
+            top: 0%;
+            left: 83%;
+            width: 5%;
+            height: 100%;
+            background: rgba(248, 106, 235, 0.6);
+            border-radius: 5%;
+            clip-path: polygon(0 0, 100% 0, 82% 100%, 18% 100%);
+        }
+        
+        .base-line-10 {
+            position: absolute;
+            top: 0%;
+            left: 93%;
+            width: 5%;
+            height: 100%;
+            background: rgba(248, 106, 235, 0.6);
+            border-radius: 5%;
+            clip-path: polygon(0 0, 100% 0, 82% 100%, 18% 100%);
+        }
+        
+        .circle1 {
+            position: absolute;
+            height: 15%;
+            width: 15%;
+            background: #7e70a9;
+            bottom: 3%;
+            left: 10%;
+            border-radius: 50%;
+            z-index: 3;
+        }
+        
+        .circle2 {
+            position: absolute;
+            height: 15%;
+            width: 15%;
+            background: #7e70a9;
+            bottom: 3%;
+            left: 27%;
+            border-radius: 50%;
+            z-index: 3;
+        }
+        
+        .circle3 {
+            position: absolute;
+            height: 15%;
+            width: 15%;
+            background: #7e70a9;
+            bottom: 3%;
+            left: 44%;
+            border-radius: 50%;
+            z-index: 3;
+        }
+        
+        .circle4 {
+            position: absolute;
+            height: 15%;
+            width: 15%;
+            background: #7e70a9;
+            bottom: 3%;
+            left: 61%;
+            border-radius: 50%;
+            z-index: 3;
+        }
+        
+        .circle5 {
+            position: absolute;
+            height: 15%;
+            width: 15%;
+            background: #7e70a9;
+            bottom: 3%;
+            right: 8%;
+            border-radius: 50%;
+            z-index: 3;
+        }
+        
+        .cake-chocolate {
+            position: absolute;
+            top: 45%;
+            left: 27%;
+            width: 46%;
+            height: 20%;
+            background: linear-gradient(to top, #261714 0%, #552620 100%);
+            border-radius: 50%;
+            z-index: 3;
+        }
+        
+        .whipped-cream-1 {
+            position: absolute;
+            width: 34%;
+            height: 17%;
+            left: 33%;
+            top: 40%;
+            border-radius: 50%;
+            background: linear-gradient(to top, #a09786 -10%, white 100%);
+            z-index: 4;
+        }
+        
+        .whipped-cream-2 {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            left: 7%;
+            top: -15%;
+            border-radius: 50%;
+            background: linear-gradient(to top, #a09786 -10%, white 100%);
+            z-index: 4;
+        }
+        
+        .whipped-cream-3 {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            left: 4%;
+            top: -15%;
+            border-radius: 50%;
+            background: linear-gradient(to top, #a09786 -10%, white 100%);
+            z-index: 4;
+        }
+        
+        .star {
+            position: absolute;
+            top: 47%;
+            left: 59.5%;
+            width: 15%;
+            height: 15%;
+            background: goldenrod;
+            clip-path: polygon( 50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            transform: rotate(25deg);
+            z-index: 4;
+        }
+        
+        .star2 {
+            position: absolute;
+            top: 38%;
+            left: 56%;
+            width: 15%;
+            height: 15%;
+            border: 1px solid brown;
+            background: goldenrod;
+            clip-path: polygon( 50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            transform: rotate(20deg);
+            z-index: 5;
+        }
+        
+        .cherry {
+            position: absolute;
+            height: 9%;
+            width: 9%;
+            top: 32%;
+            left: 48%;
+            border-radius: 50%;
+            background: linear-gradient(to top, #7c050c 0%, #da293f 100%);
+            z-index: 4;
+        }
+        
+        .cherry-bullet-black {
+            position: absolute;
+            width: 2%;
+            height: 2%;
+            top: 32.5%;
+            left: 52%;
+            border-radius: 50%;
+            z-index: 5;
+            background: black;
+        }
+        
+        .cherry-top {
+            position: absolute;
+            top: 13.5%;
+            left: 52.5%;
+            width: 10%;
+            height: 20%;
+            background: none;
+            border-top-left-radius: 60%;
+            border-left: solid 5px green;
+            z-index: 5;
+        }
+        
+        .candle-1 {
+            position: absolute;
+            height: 30%;
+            width: 3%;
+            top: 29%;
+            left: 31%;
+            transform: rotate(-20deg);
+            border-radius: 5px;
+            border-top-left-radius: 60%;
+            border-top-right-radius: 60%;
+            background: #f9619e;
+            z-index: 4;
+        }
+        
+        .candle-2 {
+            position: absolute;
+            height: 30%;
+            width: 3%;
+            top: 30%;
+            left: 36%;
+            transform: rotate(-15deg);
+            border-radius: 5px;
+            border-top-left-radius: 60%;
+            border-top-right-radius: 60%;
+            background: #f9619e;
+            z-index: 4;
+        }
+        
+        .candle-line-1 {
+            position: absolute;
+            height: 2%;
+            width: 80%;
+            top: 6%;
+            left: -1%;
+            background: #f8abca;
+            transform: rotate(-45deg);
+        }
+        
+        .candle-line-2 {
+            position: absolute;
+            height: 2%;
+            width: 85%;
+            top: 12%;
+            left: -1%;
+            background: #f8abca;
+            transform: rotate(-45deg);
+        }
+        
+        .candle-line-3 {
+            position: absolute;
+            height: 2%;
+            width: 95%;
+            top: 18%;
+            left: -1%;
+            background: #f8abca;
+            transform: rotate(-45deg);
+        }
+        
+        .candle-line-4 {
+            position: absolute;
+            height: 2%;
+            width: 109%;
+            top: 24%;
+            left: -1%;
+            background: #f8abca;
+            transform: rotate(-40deg);
+        }
+        
+        .candle-line-5 {
+            position: absolute;
+            height: 2%;
+            width: 117%;
+            top: 30%;
+            left: -1%;
+            background: #f8abca;
+            transform: rotate(-38deg);
+        }
+        
+        .candle-line-6 {
+            position: absolute;
+            height: 2%;
+            width: 113%;
+            top: 36%;
+            left: -1%;
+            background: #f8abca;
+            transform: rotate(-35deg);
+        }
+        
+        .candle-line-7 {
+            position: absolute;
+            height: 2%;
+            width: 114%;
+            top: 42%;
+            left: -1%;
+            background: #f8abca;
+            transform: rotate(-30deg);
+        }
+        
+        .candle-line-8 {
+            position: absolute;
+            height: 2%;
+            width: 114%;
+            top: 48%;
+            left: -1%;
+            background: #f8abca;
+            transform: rotate(-28deg);
+        }
+        
+        .candle-line-9 {
+            position: absolute;
+            height: 2%;
+            width: 117%;
+            top: 54%;
+            left: -1%;
+            background: #f8abca;
+            transform: rotate(-28deg);
+        }
+        
+        .candle-line-10 {
+            position: absolute;
+            height: 2%;
+            width: 115%;
+            top: 60%;
+            left: -1%;
+            background: #f8abca;
+            transform: rotate(-25deg);
+        }
+        
+        .candle-line-11 {
+            position: absolute;
+            height: 2%;
+            width: 115%;
+            top: 66%;
+            left: -1%;
+            background: #f8abca;
+            transform: rotate(-25deg);
+        }
+        
+        .candle-line-12 {
+            position: absolute;
+            height: 2%;
+            width: 117%;
+            top: 72%;
+            left: -1%;
+            background: #f8abca;
+            transform: rotate(-23deg);
+        }
+        
+        .fire-candle-1 {
+            position: absolute;
+            width: 7%;
+            height: 7%;
+            top: 23.5%;
+            left: 24%;
+            transform: rotate(-25deg);
+            background: linear-gradient(to top, #f83600 0%, #f9d423 100%);
+            clip-path: ellipse(13% 40% at 50% 50%);
+            z-index: 6;
+            animation: candle-fire 2s infinite;
+            /*   border-bottom-left-radius:20px;
+   border-bottom-left-radius:20px; */
+        }
+        
+        .fire-candle-2 {
+            position: absolute;
+            width: 7%;
+            height: 7%;
+            top: 24%;
+            left: 30%;
+            transform: rotate(-20deg);
+            background: linear-gradient(to top, #f83600 0%, #f9d423 100%);
+            clip-path: ellipse(13% 40% at 50% 50%);
+            z-index: 6;
+            animation: candle-fire 2s infinite;
+        }
+        
+        @keyframes candle-fire {
+            0% {
+                transform: scale(1) rotate(-25deg);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1) rotate(-25deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Yummmieeeee!!!!!!</h1>
+    <div class="box">
+        <div class="cake-bottom"></div>
+        <div class="base">
+            <div class="base-line-1"></div>
+            <div class="base-line-2"></div>
+            <div class="base-line-3"></div>
+            <div class="base-line-4"></div>
+            <div class="base-line-5"></div>
+            <div class="base-line-6"></div>
+            <div class="base-line-7"></div>
+            <div class="base-line-8"></div>
+            <div class="base-line-9"></div>
+            <div class="base-line-10"></div>
+
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+            <div class="circle5"></div>
+            <div class="circle6"></div>
+
+        </div>
+        <div class="cake-chocolate"></div>
+        <div class="whipped-cream-1">
+            <div class="whipped-cream-2">
+                <div class="whipped-cream-3"></div>
+            </div>
+        </div>
+        <div class="star"></div>
+        <div class="star2"></div>
+        <div class="cherry"></div>
+        <div class="cherry-bullet-black"></div>
+        <div class="cherry-top"></div>
+
+        <div class="candle-1">
+            <div class="candle-line-1"></div>
+            <div class="candle-line-2"></div>
+            <div class="candle-line-3"></div>
+            <div class="candle-line-4"></div>
+            <div class="candle-line-5"></div>
+            <div class="candle-line-6"></div>
+            <div class="candle-line-7"></div>
+            <div class="candle-line-8"></div>
+            <div class="candle-line-9"></div>
+            <div class="candle-line-10"></div>
+            <div class="candle-line-11"></div>
+            <div class="candle-line-12"></div>
+            <div class="candle-line-13"></div>
+            <div class="candle-line-14"></div>
+            <div class="candle-line-15"></div>
+        </div>
+        <div class="candle-2">
+            <div class="candle-line-1"></div>
+            <div class="candle-line-2"></div>
+            <div class="candle-line-3"></div>
+            <div class="candle-line-4"></div>
+            <div class="candle-line-5"></div>
+            <div class="candle-line-6"></div>
+            <div class="candle-line-7"></div>
+            <div class="candle-line-8"></div>
+            <div class="candle-line-9"></div>
+            <div class="candle-line-10"></div>
+            <div class="candle-line-11"></div>
+            <div class="candle-line-12"></div>
+            <div class="candle-line-13"></div>
+            <div class="candle-line-14"></div>
+            <div class="candle-line-15"></div>
+        </div>
+
+        <div class="fire-candle-1"></div>
+        <div class="fire-candle-2"></div>
+
+    </div>
+</body>
+
+</html>
