@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+    <style>
+        body {
+            /*    background: linear-gradient(#141e30, #243b55); */
+            background: #73568f;
+        }
+        
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 450px;
+            height: 450px;
+            /*   padding: px; */
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+        
+        .btn-box {
+            position: absolute;
+            top: 98%;
+            left: 50%;
+            width: 150px;
+            height: 30px;
+            font-size: 18px;
+            /*   padding: px; */
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+        
+        h2 {
+            text-align: center;
+            /*   text-decoration: underline; */
+            font-size: 30px;
+            color: #73568f;
+        }
+        
+        .f {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            line-height: 1;
+            /*       padding:1px;  */
+            margin-left: 25%;
+        }
+        
+        label {
+            font-size: 15px;
+            font-weight: 500;
+            font-family: cambodian;
+            margin-top: 10px;
+            color: white;
+            padding: 5px;
+            left: 50px;
+        }
+        
+        a {
+            margin: 20px 0;
+            /*   background: orange; */
+            padding: 5px;
+            font-size: 18px;
+            color: white;
+            font-weight: 600;
+            /*   border: 2px solid orange; */
+            border-radius: 5px;
+            letter-spacing: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        a:hover {
+            background: #b2abba;
+            color: #73568f;
+        }
+        
+        .login-box .user-box {
+            position: relative;
+        }
+        
+        .box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+        }
+        
+        .box .user-box label {
+            position: absolute;
+            top: 0.5;
+            left: 1;
+            padding: 1px 0;
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+        
+        .box .user-box input:focus~label,
+        .box .user-box input:valid~label {
+            top: -40px;
+            left: 0;
+            color: #03e9f4;
+            font-size: 2px;
+        }
+        
+        .box a span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient( 90deg, rgba(0, 0, 0, 1) 0%, rgba(115, 86, 143, 1) 65%, rgba(177, 167, 190, 1) 100%);
+            animation: btn-anim1 1s linear infinite;
+        }
+        
+        @keyframes btn-anim1 {
+            0% {
+                left: -0%;
+            }
+            50%,
+            100% {
+                left: 0%;
+            }
+        }
+        
+        .box a span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient( 90deg, rgba(0, 0, 0, 1) 0%, rgba(115, 86, 143, 1) 65%, rgba(177, 167, 190, 1) 100%);
+            animation: btn-anim2 1s linear infinite;
+            animation-delay: 0.25s;
+        }
+        
+        @keyframes btn-anim2 {
+            0% {
+                top: -0%;
+            }
+            50%,
+            100% {
+                top: 0%;
+            }
+        }
+        
+        .box a span:nth-child(3) {
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient( 90deg, rgba(177, 167, 190, 1) 0%, rgba(115, 86, 143, 1) 25%, rgba(0, 0, 0, 1) 100%);
+            animation: btn-anim3 1s linear infinite;
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes btn-anim3 {
+            0% {
+                right: -0%;
+            }
+            50%,
+            100% {
+                right: 0%;
+            }
+        }
+        
+        .box a span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient( 90deg, rgba(0, 0, 0, 1) 0%, rgba(115, 86, 143, 1) 65%, rgba(177, 167, 190, 1) 100%);
+            animation: btn-anim4 1s linear infinite;
+            animation-delay: 0.75s;
+        }
+        
+        @keyframes btn-anim4 {
+            0% {
+                bottom: -0%;
+            }
+            50%,
+            100% {
+                bottom: 0%;
+            }
+        }
+        
+        .box a span {
+            position: absolute;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>Sign-up </h2>
+        <form class="f">
+            <div class="user-box">
+                <label>Firstname</label>
+                <input type="text" placeholder="eg. Mark">
+            </div>
+            <div class="user-box">
+                <label>Lastname</label>
+                <input type="text" placeholder="eg. Henry">
+            </div>
+            <div class="user-box">
+                <label>Mobile</label>
+                <input type="tel" placeholder="eg. 1234567890">
+            </div>
+            <div class="user-box">
+                <label>E-mail</label>
+                <input type="email" placeholder="eg. henry22@gmail.com">
+            </div>
+            <div class="user-box">
+                <label>Password</label>
+                <input type="Password" placeholder="eg. xxyyzz">
+            </div>
+            <a class="btn-box" href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> SUBMIT
+            </a>
+        </form>
+    </div>
+</body>
+
+</html>
