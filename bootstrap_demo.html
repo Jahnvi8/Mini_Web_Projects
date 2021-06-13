@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .btn:hover {
+            background: rgba(155, 137, 35, 0.596);
+            box-shadow: 2px 3px 10px rgba(241, 206, 6, 0.979);
+        }
+        
+        .sidebar {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 100;
+            padding: 90px 10px 0 10px;
+            border-right: 1px solid #d3d3d3;
+        }
+        
+        .left-sidebar {
+            position: sticky;
+            top: 0;
+            height: calc(100vh - 70px)
+        }
+        
+        .sidebar-nav li .nav-link {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .sidebar-nav li .nav-link:hover {
+            color: rgb(12, 114, 247);
+        }
+        
+        .container {
+            position: absolute;
+            left: 18%;
+            top: 12%;
+            /* background: rgba(7, 98, 173, 0.274); */
+            /* width: 100%; */
+            margin: 0%;
+            /* padding: 10px; */
+        }
+        
+        .container2 {
+            position: absolute;
+            left: 46%;
+            top: 12%;
+            /* background: rgba(7, 98, 173, 0.274); */
+            /* width: 10%; */
+            margin: 0%;
+            /* padding: 10px; */
+        }
+        
+        .container3 {
+            position: absolute;
+            left: 73%;
+            top: 12%;
+            /* background: rgba(7, 98, 173, 0.274); */
+            /* width: 100%; */
+            margin: 0%;
+            /* padding: 10px; */
+        }
+        
+        .container .container2 .container3 h2 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: 600;
+        }
+        
+        .container hr {
+            width: 28%;
+        }
+        
+        .sp {
+            width: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ............navbar.................................. -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top bg-primary">
+        <div class="container-fluid ">
+            <!-- <a class="navbar-brand" href="#" style="color: azure;">Alpha Top</a> -->
+            <a class="navbar-brand" href="#">
+                <!-- .........logo img...... -->
+                <img src="data:image/png;base64,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"
+                    alt="" width="30" height="24">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" style="color: azure;"> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: azure;">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" style="color: azure;" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Reach to us 
+                </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Email</a></li>
+                            <li><a class="dropdown-item" href="#">Contact</a></li>
+                            <li><a class="dropdown-item" href="#">Twitter</a></li>
+                            <li><a class="dropdown-item" href="#">Instagram</a></li>
+                            <li><a class="dropdown-item" href="#">Facebook</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Terms and Condition</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" style="color: azure;">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ..................end navbar............................. -->
+
+    <!-- .........................sidebar......................  -->
+    <div class="col-md-2 bg-light d-none d-md-block sidebar">
+        <div class="left-sidebar">
+            <ul class="nav flex-column sidebar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        <svg class="bi bi-chevron-right" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z" clip-rule="evenodd"/></svg>                        Candidates
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <svg class="bi bi-chevron-right" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z" clip-rule="evenodd"/></svg>                        Jobs
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <svg class="bi bi-chevron-right" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z" clip-rule="evenodd"/></svg>                        Orders
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <svg class="bi bi-chevron-right" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z" clip-rule="evenodd"/></svg>Invoices
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <svg class="bi bi-chevron-right" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z" clip-rule="evenodd"/></svg>Reports
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- ......................end sidebar..............  -->
+
+    <div class="container">
+        <h2>Damon Salvatore</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5NIxxkfJMAgwE44rJZIx6DWAo5GSjbeWYvg&usqp=CAU" width="320px" height="450px" alt="">
+        <hr class="brk">
+        <span class="sp">The Vampire Diaries is an American supernatural teen drama television series developed by Kevin Williamson and Julie Plec, based on the popular book series of the same name written by L. J. Smith. The series premiered on The CW on September 10, 2009, and concluded on March 10, 2017, having aired 171 episodes over eight seasons.
+
+            The pilot episode attracted the largest audience for The CW of any series premiere since the network began in 2006;[1] the first season averaged 3.60 million viewers.[2] It was the most-watched series on the network before being supplanted by Arrow. The show has received numerous award nominations, winning four People's Choice Award and many Teen Choice Awards.
+            
+            In April 2015, lead actress Nina Dobrev, who played Elena Gilbert, confirmed that she would be leaving the show after its sixth season. Dobrev returned to record a voiceover for the seventh-season finale and returned as a guest star in the series finale. In March 2016, The CW renewed the series for an eighth season,[4] but in July of that year announced that the eighth season, consisting of 16 episodes, would be the show's last.[5] The final season began airing on October 21, 2016, and ended March 10, 2017.
+            
+            The concepts and characters developed in the series served to launch a media franchise that includes other television series, web series, novels and comic books. The television series The Originals, which also aired on The CW, was the first major entry in this collection of connected works.</span>
+    </div>
+
+    <div class="container2">
+        <h2>Elena Gilbert</h2>
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUWFRgWFRUYGBgYHBoYHBocGhgYGhwaGiEZGhgaHBocIS4lHCErIRgYJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHhISGjEhISE0MTQ0NDE0NDQ0NDE0NDQ0NDQ0NDQ0NDQ0NDQxNDQ0NDQ0MTQ0MTQ0NDQ0NzQ0MT80NP/AABEIAN8A4gMBIgACEQEDEQH/xAAbAAACAgMBAAAAAAAAAAAAAAACAwEEAAUGB//EADwQAAIBAgMFBQUGBQQDAAAAAAECAAMRBBIhBTFBUWEGcYGRsSKhwdHwEzJCUnLhI2KSovEkM3OCB7LC/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECAwQF/8QAIREBAQACAgIDAQEBAAAAAAAAAAECEQMhMTISQXEEIlH/2gAMAwEAAhEDEQA/ANGBDyzAsZlhEKI5EkBYxBAwLIK6x6LBZICMsIL8oapJCwARIeWGEhAQFBJVxOOpJ99wDyGp8hKu1tp5boh1G9uXQdZzVZt/v/cxFkrfVNv0xuR28FHuJkt2go6XzC435bgd85CufrdIovfRtQPd1mtD0KjUVwGRsy8CI8JpPPsHjXw73Q6HeN4I+uM7vZm0ErpmTePvA71P1xksRYZIDppH2guJBVZZCJaOZeUjKIC7RbrH2gssoWy6RZWWGi2WAkiIcS0wiXWBUqrFZY+qIFtJQiZCymZA3QSMtwkDfGZd0yMURyLBAjacgJV0glY+2kWRAALIURgWAJRlpR2vi/s0JH3m0HxMvzmNtVc9XLf2UGvfCyba03Pj9E98XVTylp9/l/iDl57hvMjbVVKRiaAs448+7jOh2Vsapi3yoCEG9tw852OH7D00UZhmPWZy5Jj0THbzrF4cDQ+fThE7NxjUHDru3EcGHEfvPSMV2fS1rbtJw+3dnGkTbVby4cky6q5Ya7dthKqugdDdWFx8jCYTk+xm0bMaTHRtV6HiPdOwcTVcle0hljckjLAWogMkcFgsusBJEFljiIFoCSsSyy0wiCsoqVFibSzVEUVlCMsyOtMgbdV1jgsBd8dl1mBKJGhYKRggFkkMIcgiAm0xVjCJiiAiuwVWY8AT5Th1e924sS3hfTzPpOn7RV7U8g3ubeHGc0m/oPQaD4nxhrESqR3wMUhLpSGpYgt47hLmFQau2iqMx7gLgfXTnF9n1z4n7V9wOY8B0F+ExcnSYvVuzmyRQpKoHUnmTL+JnCbT7eupK4dy5BC5RS9m50ADFsxJOm7WO2F2nxFdwj0xrxFwdN9wZysut1qXt0ONp6GcL2hoFg2k3naftCaHshMz23HcL7r/ACnGrtt6xK1GKlr5RkAUnda+/fpLhjfMLlPDmcHWZHDKbEHTvE9RwWKFWmrj8Q1HIjeJ5M/3j0J9Z2nYrHXLUydGGdf1DRh5W/pnpscK6toGhjrQCvKZQAHSQyRqiQZRXcReWWXEWRAQVinWWCIlxAqVBFFY+oIphp0E0FzJGeZA3SCPA3QEEaFmASiNRYCCWEECFExlhrIaAu0hRGhZAWBx3aOteqRwRdO82/aavDtnYIB7K6t36WBj+0b/AMWoRzt8JpMVXKLkB36ueZ/LflGtuk6iztbaV/4SH2QfaYfiO+wPK/HjO/8A/HWzkdCXAIbSeSq2ons3YVslJeus58k1I3hd7bPaPZFGqI9IhChunsg5f034cbTc7M2SlJcxOZyczMbXJ4yw+K0lZ8WyLndHYXGiKWIB33A9Zy21pzPaLZKVcS4cb1AmnxvZ4U1DlrhFIQcBfUzdbV2ulSuGQH2RY39BNL2x2nkw7WOpGUd7ae4XPhLLbdQ1Nbry8Ne55zZ9mXK4mnbiwB7jcfGa+lTuD0E3vZbCXxAO8Jr4nd8fKev6cHoQEhhGGC0wyAWkEQ8shoCngNGMusEwEmJcR5inlFNxFutxHuNYDSinkPKZLeQcpko2yrHCLO+MUzAagjRFoY0CBIWCYcAQJEGGBKW06+Smx4kWHxPlA4fbLgs5HFvifnOfZSxt9cPnNxi3v4nT5yl9jYBuRHyPqIxrpYW2DspBFm3g8r/Cel9g8ar0ch0dNCPQiecYnMDr58xG7Nx1SjUD0zYjhwI4g9JnPH5RcbqvcA9hpqeU1uP2/i1BFPAnKLgs1RCf6VOneTNfsTtOlQAVBkbruv0M32LwVOotzUZeqmxPKefw6zX24XE7UrPVs+HWnp+YE2HE23zlu1eNz1FQG4Tf+o/t6zpO1dZMMMqMWqPuub2H5j0+M4IHUsTcnf3nf6zvx49/JjPKXqHKulhzPw+U6/sXSAznjp53YfXfOTpD2gOW/wB15tez20zSqEkXUmzDjYnQ+BJ850rnZ09CMgKLXmI2YAqQQRcHoZNtJGELaC6w1GsN4FVhAaMc3MBxpAQRFvGkGKaUVXGsBjGOIpt0oyZImQN0wmZTGGxmWmQxFlhRpEoJYWAMi0ZwgEQIE47be1c1Z0G5QEHUjVrDv08J1OOxBRGYC5A9nqToJ5+cMyEs33jfvudTJdN4z7VMU+t+Olhy+cs4jEU3puBYG9x3EX9ZrMYdd+vvlWm516i3yl+O+2tr1KrnUIdT+Hnu1H1yk4b2msOnz+u6UUcqQRvGsdg8QVe/XUd8tnlJXdbMwQZIWJpMoNmYW6mW9jOCosd8Lai++eTd29EeYV6jNVcsxY3YXJJOhNhrJK6jvkYumUqODvDN6mMdePCez6ec+int67mvaMqU8j5h+0tikMo136g77EfQPnKta4Op0OvjxEzvs06/sztEH+HfQ6rfhzE6QieXYTFlGVwdxnqFBwyBhuIB89YZyCt7wmEkb5DCGSDIaYx1tMYwEGKePaKqLKKjiKdY5hAIlFe3SZHZZkDciEpkcISjSZDkjliUjQYBiATDEq4+sUpu43qpI77aQOa7Q7XYP9mhsFBLH4e+aakmb23bM7bhf7o+uAlBqn2l2B9oE795GuvvvH4dXBOX8Iv9eczY9GGO4Tj8Kq+0x8PlzlTBgFxceyLn3QHLOxLMSb7zr9ftNjsekrWLbhmLdwsT7ry+Ix5qjicKUF20J1tKPGX9pVmd2dt53DgBwA8JUYaXI4TeNSxv+zu1shyvcpfhvXu5jpO6ODWooKPcHUHQieXYNG1ykAnjvm+2ZtWpROXepOo1tfoeE48mO7uPTjjcsZY2GP2GlRnzHJUF7cj/AJnKVKTJdfxKdOvMHvE7tsUldCyEB1UnKdDcbgeh3XnNbSw5JzgWvvHIyYZWdVi4buvsnCkOlh0IHIg2t5MfC0r45B7S9SR9eBg0KmU23b/T/ECud3v8b/vOmu3OzXSlTfnuM9P7KV82FQnhmT+lio9J5o1O2Uz0jslSKYWmDvOZv6mZhNVzybewkPMGsx5GSHp634wWjG5RTDygARFOI0xVSUVmgGNI1gNKF5Jkdp0mQNnl0hrAHxhKvWZDEMesSsasAxE4mmHRkO5gQfGNCytjcStNC7dwHEngB1MK8zOCy5kO9WIuP5dAfO8u4f2VfMfwj4WHu90jGEXB/ESb+Nj8TFKCQSefxFpi3b33HWH4q4WmLk8CNPAg/OEVKMQNzjTuJW/pIweIsQp5k+dwfWPxKEU0e1yrf2m9h7pqvNYrYunZhfp8oFdQ7AAWFrge8e4S7tJRmvwv7r/vEqfaQ87jz/zEZvklKJQ982QS46+sq0fack+EvgTOV7fS4Mf8KrKwIZDlZeHA/KbChtNaiFKgCsdL8CfgekruoMRVog6yWSmXHL2qYmj7XVTY+ErfaXN7d4+MuOjd59ZQf7xInTF5f6MdaphSx6ce7nPVMKoCKF+6AAO7hPKaL8xu945T0ns9iQ9BCOAAPeNPhFeTJs1S/CYUjE7vGS0Mq7iIcaSy8S0BLDSJcR7RNQaSm1c8RAqRsW4gIzTJYyiTKNih0MZTiKfwj08pkMWNUxKmMWA3hNbi8MPbqOczKrZR+FdDqBz6zYiajbCO6MB7KKCzHi1rkKOlwLnlFax9o4p1ubwqJA0PE/4ktv0gYgX1tOb62WO5WvKe2V5tbzP7za43Ermp01PsIRnPMkWHqfOak1De/GKw+r+P175vW3z8umzxji7LyPs92lgfIRNN7kfq9IeOpHIG8B16yirkMOgPpE8MXy2GGFmI7pdtNZg6ntm/GbLNMXy+nw3/ADAlZDSWaLdodKVUMoYpNc3Pf3y3UaKqC43aTcefk1ZpWyWF7ztexT/w2XkbjuN/jOMPCdH2Kr2qsh4gkHyuO75SvFy468O6RpjNBEj1hwIqOc1rQWjqixLiAtompHtEOZWS7QWGsO0BjDSLzIWaZAuIunlHIYtYaCQMEYsWBCFoDVlLHE5HH8jehlsNK2N+4/6G9DDWPtHBtvmVN0w75j8ZzfZa+nTvfncfH5Q3oqmQMd4zHjpDwou/1qeEr4lyzMeAsL9Bumng5J3T8dVDWbcGYqi77Kv3jfvsO8NKO86cf8esPEXJT9IA8CT6kyaZGYXIA66brmWdRyxnyy0ZhqZ3zYI8rrVQfiHnJWuv5h5yXt9LDWM1s9jEVGhF+sAgbz6SRq0qqPZB6xbH684ytWUrYX8rcolt01Hny1voDJeb/slpXBJ+8GTx0PwmjTfOi2EgC1DuZQH7ipzeoEbebm8O2ExTrCQ6CCekrygrSuwlirFEQEuZXJ1jyu+JYSshEQ0eIpxCwrMZMy0yFbNDxjVlaidI9BIGiEICwlMBkq48/wAN/wBLehltZR2kf4T/AKG9IrWHtP1xAGshzvkrvgtunN9lTzWOnHTwkVKNqYccXyHlqodfR5j75s1wufAYkjejo4/6j2v7Wabjyc01LVB6WdCRvT2geh0IimoXFh+IZh3jePc0ds2pZSLXupHnvi8TpkAvcb5PvTl8LO1hKVgBaSFHKIGII0gmox3CNV7ZlNLD1AJVqOW7pIp8TJMSJlbSyNJAtaS0Gac6ZgaWeoifmNieQ4+686LZ+za6PZlulSwLX1Cg3IYdRpNb2Vp5sSn8odv7SPiJ34h4+bLvR6CQ0FZgaHAus2oEW7Q6qcYDwUpolhGuYhpWURLRt4gtrCxF5kyZCryJbfHI0UBGoNJAxTDWADDUwDUyntL/AGn1/CZbWUtpH+G/6W9IreHtP2OMXjFvCB3wHM5vsKdQzreyFMPRrK25mKHuKKPiZyVWdd2GN6VT/k/+Em48f9F/zY5HDqyAqdGUlD3qbH3iERczYdsbU8UQo++qu1/zEspI5XyjxvNWlXnHxvkw5sdSVbSiOO+MAErjFAnW/h1kvXXqJPjXonLh9WCcRLQWrLzPlFtiF6yzGsZcuP8A2DIgxLYpesWaxbTcJrVccuXH6dv2S2YUBrOLZxZBxyk3LHvsLdO+dMN8obFe+HpH+RPcLS8DrI8mVtytoiZNMwWW8hYYZWaIYw3i2EBTtviWaMcRMowtK1QR7xLQAznkJkDXpJgbRG0EeBEIdIwGQOSTreLWNvAJZR2m1qNT9J98vCa7bbfwX7h6iG8Pafsced0U8Y8U5mH2FarOv7B/7L/8h/8ARJyNUTtOxC2w5PN3PkFHwmo8P9HhpO37qa9NQPbCEseas3sDwysf+050GbHtTjRUxb2+6gWmDzyXzf3Mw8JrQfrwnWeHiZluQOZA+MtYgjfEUfvD9Xp/iPxG484FRninYQ2MS8ATDp7xFgxlPfJW8PaPTOzj3w1PuI8mYTZEzUdlT/pk6Fx/c02t5hMvan3uIKiECLQM0Ml1YDGZXW5i2MAGiGMa5iHMohmi2aETEO0CLHnMg5ukyUbcN1jBFrGTIIQs0BTCBgNUzV7d0ot1Kj3g/CbBW0mq7QE/ZdMy/GS+HTi98f1yzmLcwnOsBpI+tSKhnXbExf2GzzV/L9ow6tnKoPE2nI1d0t7ZxmXBYaiPx56jdwdrDzJPhNYzbwf0tJhwTqdSTqep3mPU+/6HumYdbLDInR5BUBqPE/XnJqkeEykpvcECw43PpMddNSPI/OBUaKYywwHBr+FosoOsBIjEGszTlDWStYe0egdkj/pl/U/qZtyt5oux9S9Ar+Vz5EA/Oby8wuftRs3CQjRTn5RlE6QwyqwvviHMKq2u6KJ/eAuo0QWh1GiWlEE6RTmMtAaUImTMjc5kD//Z"
+            width="320px" height="450px" alt="">
+        <hr class="brk">
+    </div>
+
+    <div class="container3">
+        <h2>Stefan Salvatore</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFsQhjEeJM4qmLaEpG_Twnoa_5ve7BsayTFw&usqp=CAU" width="320px" height="450px" alt="">
+        <hr class="brk">
+    </div>
+
+
+</body>
+
+</html>
