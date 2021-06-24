@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1 {
+        text-align: center;
+        font-family: sans-serif;
+        text-decoration-line: underline;
+        text-decoration-style: double;
+        letter-spacing: 2px;
+    }
+    
+    h3 {
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 20px;
+        margin-top: 20px;
+        left: 40%;
+        position: absolute;
+    }
+    
+    .all-btn {
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        width: 172px;
+        height: 60px;
+        padding: 20px 30px;
+        margin: 105px;
+        color: #000;
+        left: 28%;
+        border-radius: 10px;
+        font-family: "Lato", sans-serif;
+        font-weight: 500;
+        background: transparent;
+        cursor: pointer;
+        /*   transition:2 */
+        outline: none;
+        box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        font-family: "Viaoda Libre", cursive;
+    }
+    
+    .btn16 {
+        box-shadow: none;
+        border: none;
+    }
+    
+    .btn16::after,
+    .btn16::before {
+        border: 3px solid black;
+        content: "";
+        position: absolute;
+        /*   width:calc(100%-6px);
+  height:calc(100%-6px); */
+        width: 152px;
+        height: 50px;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: transform 0.6s ease;
+    }
+    
+    .btn16:hover::after {
+        transform: translate(-5px, -5px);
+        box-shadow: 3px 3px 5px black;
+    }
+    
+    .btn16:hover::before {
+        transform: translate(5px, 5px);
+    }
+</style>
+
+<body>
+
+    <h1>Welcome to the Random Color Generator</h1>
+    <h3>Get the color code here</h3>
+    <!-- <h2>hello</h2> -->
+    <button class="all-btn btn16">Click Me </button>
+    <script>
+        const btn = document.querySelector(".btn16");
+        const h3 = document.querySelector("h3");
+        const h2 = document.querySelector("h2");
+        btn.addEventListener("click", function() {
+            const newColor = generateColor();
+            document.body.style.backgroundColor = newColor;
+            h3.innerHTML = newColor;
+        });
+
+        const generateColor = () => {
+            const r = Math.floor(Math.random() * 255);
+            const g = Math.floor(Math.random() * 255);
+            const b = Math.floor(Math.random() * 255);
+            const a = Math.round(Math.random() * 10) / 10;
+
+            return `rgba(${r},${g},${b},${a})`;
+        };
+    </script>
+</body>
+
+
+</html>
