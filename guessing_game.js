@@ -3,7 +3,7 @@ const prompt = ps();
 
 let max = parseInt(prompt("Enter your maximum value"));
 while (!max) {
-    max = prompt("Enter a valid number");
+    max = prompt("Enter a valid number"); 
 }
 
 const targetNum = Math.floor(Math.random() * max) + 1;
