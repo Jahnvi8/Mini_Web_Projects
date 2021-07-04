@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        
+        body {
+            min-height: 100vh;
+            place-items: center;
+            display: grid;
+        }
+        
+        .slider {
+            height: 250px;
+            margin: auto;
+            position: relative;
+            width: 90%;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+        
+        .slide-track {
+            display: flex;
+            width: calc(250px * 10);
+            animation: scroll 40s linear infinite;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-250px * 5));
+            }
+        }
+        
+        .slide {
+            height: 200px;
+            width: 250px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            perspective: 100px;
+        }
+        
+        img {
+            width: 100%;
+            transition: transform 1s;
+        }
+        
+        img:hover {
+            transform: translateZ(20px);
+        }
+        
+        .slider::before,
+        .slider::after {
+            background: linear-gradient( to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            content: " ";
+            height: 100%;
+            position: absolute;
+            width: 15%;
+            z-index: 2;
+        }
+        
+        .slider::before {
+            left: 0;
+            top: 0;
+        }
+        
+        .slider::after {
+            right: 0;
+            top: 0;
+            transform: rotateZ(180deg);
+        }
+        
+        .details {
+            position: absolute;
+            top: 10px;
+            left: 25px;
+            bottom: 10px;
+            right: 10px;
+            width: 200px;
+            background: rgba(0, 0, 0, 0);
+            transform: scaleY(0);
+            transition: transform 0.5s;
+        }
+        
+        .slide:hover .details {
+            transform: scaleY(1);
+        }
+        
+        .details .content {
+            position: absolute;
+            top: 0%;
+            transform: translateY(8%);
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Animated Autoplay Slideshow | CSS</h1>
+    <div class="slider">
+        <div class="slide-track">
+            <!--     ------5 img---- -->
+            <div class="slide">
+                <img src="https://images.pexels.com/photos/8066167/pexels-photo-8066167.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" href="">
+                <div class="details">
+                    <div class="content">
+                        <h1>heading</h1>
+                        <p>this is a paragrapgh. nice to meet u dear. </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="slide">
+                <img src="https://images.pexels.com/photos/4348323/pexels-photo-4348323.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+                <div class="details">
+                    <div class="content">
+                        <h1>heading</h1>
+                        <p>this is a paragrapgh. nice to meet u dear. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.pexels.com/photos/7419661/pexels-photo-7419661.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+                <div class="details">
+                    <div class="content">
+                        <h1>heading</h1>
+                        <p>this is a paragrapgh. nice to meet u dear. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.pexels.com/photos/4999940/pexels-photo-4999940.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+                <div class="details">
+                    <div class="content">
+                        <h1>heading</h1>
+                        <p>this is a paragrapgh. nice to meet u dear. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.pexels.com/photos/7223805/pexels-photo-7223805.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+                <div class="details">
+                    <div class="content">
+                        <h1>heading</h1>
+                        <p>this is a paragrapgh. nice to meet u dear. </p>
+                    </div>
+                </div>
+            </div>
+
+            <!--     ----same 5 img---- -->
+            <div class="slide">
+                <img src="https://images.pexels.com/photos/8066167/pexels-photo-8066167.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+                <div class="details">
+                    <div class="content">
+                        <h1>heading</h1>
+                        <p>this is a paragrapgh. nice to meet u dear. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.pexels.com/photos/4348323/pexels-photo-4348323.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+            </div>
+            <div class="slide">
+                <img src="https://images.pexels.com/photos/7419661/pexels-photo-7419661.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+                <div class="details">
+                    <div class="content">
+                        <h1>heading</h1>
+                        <p>this is a paragrapgh. nice to meet u dear. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.pexels.com/photos/4999940/pexels-photo-4999940.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+            </div>
+            <div class="slide">
+                <img src="https://images.pexels.com/photos/7223805/pexels-photo-7223805.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+                <div class="details">
+                    <div class="content">
+                        <h1>heading</h1>
+                        <p>this is a paragrapgh. nice to meet u dear. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
